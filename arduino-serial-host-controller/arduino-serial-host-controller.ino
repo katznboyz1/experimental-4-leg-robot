@@ -14,7 +14,7 @@ const int BACK_RIGHT_SERVO_PIN = 5;
 const int SERVO_RESET_POSITION = 90;
 
 //the amount that servos will move to move the legs (degrees)
-const int SERVO_LEG_MOVEMENT_AMOUNT = 180 / 8;
+const int SERVO_LEG_MOVEMENT_AMOUNT = 180 / 6;
 
 
 //the positions of the servos {F_L, F_R, B_L, B_R}
@@ -93,13 +93,6 @@ void loop() {
             //set the servo position to the reset position
             servoPositions[1] = SERVO_RESET_POSITION;
 
-
-
-
-
-
-
-            
         //if the reading is the character "c" then move the back left servo forwards
         } else if (serialData == 'c') {
 
