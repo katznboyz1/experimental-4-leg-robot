@@ -64,9 +64,11 @@ def walkForward1Step(sleepTime = 0.75):
     #wait for the motors to move
     time.sleep(sleepTime)
 
-
-print('resetting legs')
+#reset the legs
 resetLegs()
-time.sleep(1)
-print('walking forwards once')
+
+#move forward once
 walkForward1Step()
+
+#reset the legs
+resetLegs()
