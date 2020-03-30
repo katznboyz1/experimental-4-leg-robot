@@ -58,14 +58,14 @@ void loop() {
         //read the serial data
         int serialData = Serial.read();
 
-        //if the reading is the character "a" then move the front left servo forwards
-        if (serialData == 'a') {
+        //if the reading is the character "A" then move the front left servo forwards
+        if (serialData == 'A') {
 
             //set the servo position to forwards
             servoPositions[0] = SERVO_RESET_POSITION + SERVO_LEG_MOVEMENT_AMOUNT;
 
-        //if the reading is the character "A" then move the front left servo backwards
-        } else if (serialData == 'A') {
+        //if the reading is the character "a" then move the front left servo backwards
+        } else if (serialData == 'a') {
 
             //set the servo position to backwards
             servoPositions[0] = SERVO_RESET_POSITION - SERVO_LEG_MOVEMENT_AMOUNT;
@@ -76,14 +76,14 @@ void loop() {
             //set the servo position to the reset position
             servoPositions[0] = SERVO_RESET_POSITION;
 
-        //if the reading is the character "b" then move the front right servo forwards
-        } else if (serialData == 'b') {
+        //if the reading is the character "B" then move the front right servo forwards
+        } else if (serialData == 'B') {
 
             //set the servo position to forwards (inverted because of the direction of the leg)
             servoPositions[1] = SERVO_RESET_POSITION - SERVO_LEG_MOVEMENT_AMOUNT;
 
-        //if the reading is the character "B" then move the front right servo backwards 
-        } else if (serialData == 'B') {
+        //if the reading is the character "b" then move the front right servo backwards 
+        } else if (serialData == 'b') {
 
             //set the servo position to backwards (inverted because of the direction of the leg)
             servoPositions[1] = SERVO_RESET_POSITION + SERVO_LEG_MOVEMENT_AMOUNT;
@@ -94,14 +94,14 @@ void loop() {
             //set the servo position to the reset position
             servoPositions[1] = SERVO_RESET_POSITION;
 
-        //if the reading is the character "c" then move the back left servo forwards
-        } else if (serialData == 'c') {
+        //if the reading is the character "C" then move the back left servo forwards
+        } else if (serialData == 'C') {
 
             //set the servo position to forwards
             servoPositions[2] = SERVO_RESET_POSITION + SERVO_LEG_MOVEMENT_AMOUNT;
 
-        //if the reading is the character "C" then move the back left servo backwards
-        } else if (serialData == 'C') {
+        //if the reading is the character "c" then move the back left servo backwards
+        } else if (serialData == 'c') {
 
             //set the servo position to backwards
             servoPositions[2] = SERVO_RESET_POSITION - SERVO_LEG_MOVEMENT_AMOUNT;
@@ -112,14 +112,14 @@ void loop() {
             //set the servo position to the reset position
             servoPositions[2] = SERVO_RESET_POSITION;
 
-        //if the reading is the character "d" then move the back right servo forwards
-        } else if (serialData == 'd') {
+        //if the reading is the character "D" then move the back right servo forwards
+        } else if (serialData == 'D') {
 
             //set the servo position to forwards (inverted because of the direction of the leg)
             servoPositions[3] = SERVO_RESET_POSITION - SERVO_LEG_MOVEMENT_AMOUNT;
 
-        //if the reading is the character "D" then move the back right servo backwards 
-        } else if (serialData == 'D') {
+        //if the reading is the character "d" then move the back right servo backwards 
+        } else if (serialData == 'd') {
 
             //set the servo position to backwards (inverted because of the direction of the leg)
             servoPositions[3] = SERVO_RESET_POSITION + SERVO_LEG_MOVEMENT_AMOUNT;
