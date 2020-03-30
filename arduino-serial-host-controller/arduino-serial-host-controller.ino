@@ -128,6 +128,12 @@ void loop() {
 
             //set the servo position to the reset position
             servoPositions[3] = SERVO_RESET_POSITION;
+
+        //if the reading is the character "5" then delay the program for a tenth of a second
+        } else if (serialData == '5') {
+
+            //wait a tenth of a second (100ms)
+            delay(100);
         }
 
         //move all of the servos to their new position
