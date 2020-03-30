@@ -14,7 +14,8 @@ const int BACK_RIGHT_SERVO_PIN = 5;
 const int SERVO_RESET_POSITION = 90;
 
 //the amount that servos will move to move the legs (degrees)
-const int SERVO_LEG_MOVEMENT_AMOUNT = 180 / 6;
+int SERVO_LEG_MOVEMENT_AMOUNT = 180 / 6;
+const int SERVO_LEG_MOVEMENT_AMOUNTS[3] = {SERVO_LEG_MOVEMENT_AMOUNT / 2, SERVO_LEG_MOVEMENT_AMOUNT, SERVO_LEG_MOVEMENT_AMOUNT * 2};
 
 
 //the positions of the servos {F_L, F_R, B_L, B_R}
@@ -134,6 +135,24 @@ void loop() {
 
             //wait a tenth of a second (100ms)
             delay(100);
+
+        //if the reading is the character "6" then set the servo leg movement amount to the lowest setting
+        } else if (serialData == '6') {
+
+            //set it to the lowest setting
+            SERVO_LEG_MOVEMENT_AMOUNT = SERVO_LEG_MOVEMENT_AMOUNTS[0];
+
+        //if the reading is the character "7" then set the servo leg movement amount to the medium setting
+        } else if (serialData == '7') {
+
+            //set it to the medium setting
+            SERVO_LEG_MOVEMENT_AMOUNT = SERVO_LEG_MOVEMENT_AMOUNTS[1];
+
+        //if the reading is the character "8" then set the servo leg movement amount to the highest setting
+        } else if (serialData == '8') {
+
+            //set it to the highest setting
+            SERVO_LEG_MOVEMENT_AMOUNT = SERVO_LEG_MOVEMENT_AMOUNTS[2];
         }
 
         //move all of the servos to their new position
