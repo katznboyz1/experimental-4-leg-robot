@@ -39,6 +39,9 @@ void setup() {
     BACK_LEFT_SERVO.attach(BACK_LEFT_SERVO_PIN);
     BACK_RIGHT_SERVO.attach(BACK_RIGHT_SERVO_PIN);
 
+    //show where all the servos are attached
+    Serial.println("?|SERVOS ATTACHED ON " + String(FRONT_LEFT_SERVO_PIN) + "," + String(FRONT_RIGHT_SERVO_PIN) + "," + String(BACK_LEFT_SERVO_PIN) + "," + String(BACK_RIGHT_SERVO_PIN));
+
     //move all of the servos to the reset position
     FRONT_LEFT_SERVO.write(SERVO_RESET_POSITION);
     FRONT_RIGHT_SERVO.write(SERVO_RESET_POSITION);
